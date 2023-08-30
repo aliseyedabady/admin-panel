@@ -1,13 +1,16 @@
-import React from "react";
-import Sidebar from "./components/sidebar";
-import MainLayout from "./layout/main";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import Routing from "./components/routing";
+import { initial } from "./features/user";
+import { routes } from "./router";
 
 const App = () => {
-  return (
-    <MainLayout>
-      <p></p>
-    </MainLayout>
-  );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(initial());
+  }, []);
+
+  return <Routing routes={routes} />;
 };
 
 export default App;

@@ -5,6 +5,9 @@ module.exports = {
     extend: {
       colors: {
         borderSidebar: "#EAEFF4",
+        bgAuth: "#F2F6FA",
+        inputBorder: "#e5eaef",
+        primary: "#5D87FF",
       },
     },
   },
