@@ -8,6 +8,7 @@ module.exports = {
         bgAuth: "#F2F6FA",
         inputBorder: "#e5eaef",
         primary: "#5D87FF",
+        subPrimary: "#4570EA",
       },
     },
   },

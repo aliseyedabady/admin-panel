@@ -15,10 +15,16 @@ export const theme = createSlice({
     toggle: state => {
       state.drawer = !state.drawer;
     },
+    openDrawer: state => {
+      state.drawer = true;
+    },
+    closeDrawer: state => {
+      state.drawer = false;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { toggle } = theme.actions;
+export const { toggle, openDrawer, closeDrawer } = theme.actions;
 
 export default theme.reducer;

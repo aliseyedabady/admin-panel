@@ -26,7 +26,7 @@ const MainLayout: React.FC<Props> = ({ children }) => {
       >
         <nav>
           <button onClick={() => dispatch(toggle())}>
-            <RxHamburgerMenu />
+            <RxHamburgerMenu size={"1.5rem"} />
           </button>
         </nav>
       </motion.div>

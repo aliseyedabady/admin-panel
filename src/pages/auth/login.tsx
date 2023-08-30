@@ -1,6 +1,8 @@
 import React from "react";
 import Input from "../../components/form/input";
 import Btn from "../../components/form/button";
+import CheckBox from "../../components/form/checkbox";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -51,9 +53,15 @@ const Login = () => {
 
       <Input label="نام کاربری" />
       <Input label="رمز عبور" />
+      <div className="flex justify-between items-center">
+        <CheckBox label="مرا به خاطر بسپار" classNames="my-4" />
+        <Link className="text-sm text-primary" to={"/forget-password"}>
+          فراموشی رمز عبور
+        </Link>
+      </div>
       <Btn
         text="ورود"
-        classNames="bg-primary text-white w-full justify-center  px-6 py-2 "
+        classNames="bg-primary mt-6 hover:bg-subPrimary text-white w-full justify-center  px-6 py-2 "
       />
     </div>
   );
