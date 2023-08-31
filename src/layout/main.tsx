@@ -1,16 +1,13 @@
-import React from "react";
-import Sidebar from "../components/sidebar";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { useDispatch } from "react-redux";
-import { toggle } from "../features/theme";
-import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
+import React from "react";
+import { useSelector } from "react-redux";
+import Sidebar from "../components/sidebar";
 import { RootState } from "../store";
+import Header from "../components/header";
 interface Props {
   children: React.ReactNode;
 }
 const MainLayout: React.FC<Props> = ({ children }) => {
-  const dispatch = useDispatch();
   const drawer = useSelector((state: RootState) => state.themeReducer.drawer);
   const variants = {
     open: { marginRight: 270 },
@@ -22,15 +19,11 @@ const MainLayout: React.FC<Props> = ({ children }) => {
       <motion.div
         animate={drawer ? "open" : "closed"}
         variants={variants}
-        className={`py-[24px] px-[30px] mr-[87px]`}
+        className={`py-[24px] px-[30px] mr-[270px]`}
       >
-        <nav>
-          <button onClick={() => dispatch(toggle())}>
-            <RxHamburgerMenu size={"1.5rem"} />
-          </button>
-        </nav>
+        <Header />
+        <div className="max-w-[1200px] mx-auto">{children}</div>
       </motion.div>
-      {children}
     </div>
   );
 };

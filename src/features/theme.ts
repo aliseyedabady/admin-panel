@@ -5,7 +5,7 @@ export interface Theme {
 }
 
 const initialState: Theme = {
-  drawer: false,
+  drawer: true,
 };
 
 export const theme = createSlice({
