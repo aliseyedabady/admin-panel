@@ -12,7 +12,7 @@ const Header = () => {
   });
   return (
     <>
-      <nav className="flex ">
+      <nav className="flex mb-4">
         <button onClick={() => dispatch(toggle())}>
           <RxHamburgerMenu size={"1.5rem"} />
         </button>

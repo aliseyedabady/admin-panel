@@ -6,6 +6,8 @@ import "./assets/styles/index.scss";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { BrowserRouter } from "react-router-dom";
+import { ConfigProvider } from "antd";
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
@@ -14,7 +16,9 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <ConfigProvider theme={{ token: { colorPrimary: "#5D87FF" } }}>
+          <App />
+        </ConfigProvider>
       </BrowserRouter>
     </Provider>
   </React.StrictMode>

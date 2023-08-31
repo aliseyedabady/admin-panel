@@ -21,3 +21,29 @@ h6 {
 body {
   color: #2a3547;
 }
+// .custom-scrollbar {
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5d87ff;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #4570ea;
+}
+// }
+.card-wrapper-shadow {
+  box-shadow: rgb(145 158 171 / 30%) 0px 0px 2px 0px,
+    rgb(145 158 171 / 12%) 0px 12px 24px -4px;
+  background-image: none;
+}

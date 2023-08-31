@@ -1,0 +1,24 @@
+table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  white-space: nowrap;
+  tr {
+    th {
+      text-align: right;
+    }
+  }
+  tr:not(:last-child) {
+    th,
+    td {
+      border-bottom: 1px solid #e5eaef;
+    }
+  }
+  tr {
+    th,
+    td {
+      padding: 16px;
+    }
+  }
+}

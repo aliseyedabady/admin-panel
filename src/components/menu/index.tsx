@@ -17,7 +17,7 @@ const Menu = ({ items }: { items: MenuitemProps[] }) => {
     },
   };
   return (
-    <div className="h-[calc(100vh-180px)] overflow-y-scroll ">
+    <div className="h-[calc(100vh-180px)] overflow-y-scroll custom-scrollbar">
       {items.map((item, key) => {
         if (item.navlabel) {
           return (

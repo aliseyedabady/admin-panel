@@ -16,6 +16,7 @@
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "@types/react-redux": "^7.1.26",
+    "antd": "^5.8.5",
     "framer-motion": "^10.16.1",
     "js-cookie": "^3.0.5",
     "lodash": "^4.17.21",
