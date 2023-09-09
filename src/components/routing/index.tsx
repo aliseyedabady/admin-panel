@@ -9,7 +9,9 @@ interface Props {
   noUser?: string;
 }
 const Routing = ({ routes = [], user = "/", noUser = "/login" }: Props) => {
-  const { token } = useSelector((state: RootState) => state.userReducer);
+  const { token } = useSelector((state: RootState) => {
+    return state.userReducer;
+  });
   const isLogin = token ? true : false;
   return (
     <Routes>

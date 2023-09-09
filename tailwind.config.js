@@ -16,9 +16,11 @@ module.exports = {
         greenLight: "#E6FFFA",
         yellow: "#FFAE1F",
         lightBlue: "#49BEFF",
-        red: "#FA896B",
         green: "#13DEB9",
         text: "#2a3547",
+        red: {
+          DEFAULT: "#FA896B",
+        },
       },
     },
   },

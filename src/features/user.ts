@@ -28,7 +28,11 @@ export const user = createSlice({
     },
     initial: state => {
       const user = Cookie.get("user");
-      if (user) state = JSON.parse(user);
+      if (user) {
+        state.full_name = JSON.parse(user).full_name;
+        state.mobile = JSON.parse(user).mobile;
+        state.token = JSON.parse(user).token;
+      }
     },
     logout: state => {
       state = { full_name: "", mobile: "", token: "" };
@@ -36,5 +40,5 @@ export const user = createSlice({
     },
   },
 });
-export const { initial } = user.actions;
+export const { initial, login } = user.actions;
 export default user.reducer;

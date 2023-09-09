@@ -7,7 +7,6 @@ import Menu from "../menu";
 
 const Sidebar = () => {
   const drawer = useSelector((state: RootState) => state.themeReducer.drawer);
-  console.log("r", drawer);
   const variants = {
     open: { width: 270 },
     closed: { width: 87 },

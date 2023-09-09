@@ -1,12 +1,14 @@
+import { ConfigProvider } from "antd";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import "./assets/styles/index.scss";
 import { Provider } from "react-redux";
-import { store } from "./store";
 import { BrowserRouter } from "react-router-dom";
-import { ConfigProvider } from "antd";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import App from "./App";
+import "./assets/styles/index.scss";
+import reportWebVitals from "./reportWebVitals";
+import { store } from "./store";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -19,6 +21,7 @@ root.render(
         <ConfigProvider theme={{ token: { colorPrimary: "#5D87FF" } }}>
           <App />
         </ConfigProvider>
+        <ToastContainer />
       </BrowserRouter>
     </Provider>
   </React.StrictMode>

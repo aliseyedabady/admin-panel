@@ -6,11 +6,9 @@ import { routes } from "./router";
 
 const App = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(initial());
-  }, []);
+  dispatch(initial());
 
-  return <Routing routes={routes} />;
+  return <Routing user="/dashboard" routes={routes} />;
 };
 
 export default App;

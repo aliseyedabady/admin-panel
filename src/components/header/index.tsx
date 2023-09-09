@@ -4,7 +4,6 @@ import { toggle } from "../../features/theme";
 import Btn from "../form/button";
 import { ChevronDown } from "tabler-icons-react";
 import { useState } from "react";
-import DropDown from "../dropdown";
 const Header = () => {
   const dispatch = useDispatch();
   const [menu, setMenu] = useState({
@@ -28,9 +27,6 @@ const Header = () => {
             );
           }}
         />
-        <DropDown show={menu.app}>
-          <p>fawfwa</p>
-        </DropDown>
       </nav>
     </>
   );

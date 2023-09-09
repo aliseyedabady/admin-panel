@@ -3,8 +3,45 @@ import Input from "../../components/form/input";
 import Btn from "../../components/form/button";
 import CheckBox from "../../components/form/checkbox";
 import { Link } from "react-router-dom";
+import { usePost } from "../../hooks";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { AuthProps } from "../../types/auth";
+import { useDispatch } from "react-redux";
+import { login } from "../../features/user";
+const schema = yup
+  .object({
+    email: yup.string().required("ایمیل اجباری است"),
+    password: yup.string().required("رمز عبور اجباری است"),
+  })
+  .required();
 
 const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    setError,
+    formState: { errors },
+  } = useForm<AuthProps>({
+    resolver: yupResolver(schema),
+  });
+  const dispatch = useDispatch();
+  const [, , send] = usePost({
+    route: "admin_login",
+    redirect: {
+      status: true,
+      action: data => {
+        dispatch(login(data.data));
+      },
+    },
+    setError: ob => {
+      Object.keys(ob).map(key => {
+        setError(key, { message: ob[key][0] });
+      });
+    },
+  });
+  const onSubmit = (data: AuthProps) => send(data);
   return (
     <div>
       <div>
@@ -50,19 +87,33 @@ const Login = () => {
           <div className="bg-inputBorder h-[1px] flex-1"></div>
         </div>
       </div>
-
-      <Input label="نام کاربری" />
-      <Input label="رمز عبور" />
-      <div className="flex justify-between items-center">
-        <CheckBox label="مرا به خاطر بسپار" classNames="my-4" />
-        <Link className="text-sm text-primary" to={"/forget-password"}>
-          فراموشی رمز عبور
-        </Link>
-      </div>
-      <Btn
-        text="ورود"
-        classNames="bg-primary mt-6 hover:bg-subPrimary text-white w-full justify-center  px-6 py-2 "
-      />
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Input
+          label="ایمیل"
+          props={{
+            ...register("email" as const),
+          }}
+          error={errors.email}
+        />
+        <Input
+          type="password"
+          label="رمز عبور"
+          props={{
+            ...register("password" as const),
+          }}
+          error={errors.password}
+        />
+        <div className="flex justify-between items-center">
+          <CheckBox label="مرا به خاطر بسپار" classNames="my-4" />
+          <Link className="text-sm text-primary" to={"/forget-password"}>
+            فراموشی رمز عبور
+          </Link>
+        </div>
+        <Btn
+          text="ورود"
+          classNames="bg-primary mt-6 hover:bg-subPrimary text-white w-full justify-center  px-6 py-2 "
+        />
+      </form>
     </div>
   );
 };
