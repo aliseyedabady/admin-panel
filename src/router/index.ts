@@ -10,7 +10,7 @@ import { route } from "../types/route";
 export const routes: route[] = [
   {
     component: Login,
-    user: false,
+    user: true,
     layout: AuthLayout,
     path: "/login",
   },

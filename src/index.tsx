@@ -1,4 +1,3 @@
-import { ConfigProvider } from "antd";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
@@ -18,9 +17,7 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <ConfigProvider theme={{ token: { colorPrimary: "#5D87FF" } }}>
-          <App />
-        </ConfigProvider>
+        <App />
         <ToastContainer />
       </BrowserRouter>
     </Provider>

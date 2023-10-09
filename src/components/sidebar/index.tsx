@@ -14,7 +14,7 @@ const Sidebar = () => {
 
   return (
     <motion.div
-      className={`fixed top-0 right-0 w-[87px] border-borderSidebar border-l min-h-screen px-[21px] pt-[30px]`}
+      className={`fixed top-0 right-0 w-[270px] border-borderSidebar border-l min-h-screen px-[21px] pt-[30px]`}
       animate={drawer ? "open" : "closed"}
       variants={variants}
     >
